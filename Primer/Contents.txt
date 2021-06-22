@@ -27,9 +27,9 @@ Symbolic
   -	Conversion between string and symbolic
   -	Conversion between numeric and symbolic (*NEW)
   -	Applying symbolic functions (*NEW)
-    o	cellfun()
-    o	arrayfun()
-    o	bsxfun()
+    o	cellfun() (*NEW)
+    o	arrayfun() (*NEW)
+    o	bsxfun() (*NEW)
 Plotting
   -	Basic plotting
   -	Annotations
