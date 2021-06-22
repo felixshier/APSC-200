@@ -1,6 +1,6 @@
 [markdown guide](https://www.markdownguide.org/cheat-sheet/)
 # Primer Contents
-## Basic Concepts
+## Section 1: Basic Concepts
   -	**Live Editor & Command Window & Workspace & Search documentation (*NEW*)**
   -	**Variables (*NEW*)**
   -	**Built in functions & constants (*NEW*)**
@@ -8,7 +8,7 @@
   -	If / elseif / else statements
   -	Loop structures
   -	Timing
-## Vectors & Matrices
+## Section 2: Vectors & Matrices
   -	Row & column vectors
   -	**Evenly spaced vectors (*NEW*)**
   -	Matrices
@@ -16,11 +16,11 @@
   -	Indexing
   -	Array operations
     -	 **Sortrows (*NEW*)**
-## **Distance & Norm functions (*NEW*)**
+## **Section 3: Distance & Norm functions (*NEW*)**
   -	**Distance between points (*NEW*)**
   -	**Find neighbors with rangesearch() (*NEW*)**
   -	**Vector norms (*NEW*)**
-## Symbolic
+## Section 4: Symbolic
   -	Declaring symbolic variables
   -	Declaring symbolic functions
   -	Evaluating symbolic functions
@@ -31,10 +31,10 @@
     -	**cellfun() (*NEW*)**	
     -	**arrayfun() (*NEW*)**
     -	**bsxfun() (*NEW*)**
-## Plotting
+## Section 5: Plotting
   -	Basic plotting
   -	Annotations
   -	Animated plotting
   -	**Meshgrid & graph functions (*NEW*)**
-## **MATLAB App Designer (*NEW*)**
+## **Section 6: MATLAB App Designer (*NEW*)**
   -	**How to create a Graphical User Interface (*NEW*)**
