@@ -1,4 +1,8 @@
 [markdown guide](https://www.markdownguide.org/cheat-sheet/)
+# Primer Vision
+- Primer PDF file includes MATLAB functions including explanations and examples.
+- Primer .mlx files include interactive tutorials that will ask the students to perform tasks using the functions from the primer PDF. Each section of the primer PDF should go along with a single primer .mlx file.
+- Idea is for students to complete the primer .mlx files while following along with the primer PDF.
 # Primer Contents
 ## Section 1: Basic Concepts
   -	**Live Editor & Command Window & Workspace & Search documentation (*NEW*)**
