@@ -14,7 +14,7 @@
   - Array creation functions
   -	Indexing
   -	Array operations
-    -	 ***Sortrows (*NEW)***
+    -	 ***Sortrows (NEW)***
 ## ***Distance & Norm functions (NEW)***
   -	***Distance between points (NEW)***
   -	***Find neighbors with rangesearch() (NEW)***
