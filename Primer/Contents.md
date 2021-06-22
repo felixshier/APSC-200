@@ -1,3 +1,4 @@
+[markdown guide](https://www.markdownguide.org/cheat-sheet/)
 # Primer Contents
 ## Basic Concepts
   -	**Live Editor & Command Window & Workspace & Search documentation (*NEW*)**
