@@ -1,5 +1,5 @@
-Primer Contents
-Basic Concepts
+# Primer Contents
+## Basic Concepts
   -	Live Editor & Command Window & Workspace & Search documentation (*NEW)
   -	Variables (*NEW)
   -	Built in functions & constants (*NEW)
@@ -7,33 +7,33 @@ Basic Concepts
   -	If / elseif / else statements
   -	Loop structures
   -	Timing
-Vectors & Matrices
+## Vectors & Matrices
   -	Row & column vectors
-  -	Evenly spaced vectors (*NEW)
+  -	**Evenly spaced vectors (NEW)**
   -	Matrices
-Array creation functions
+## Array creation functions
   -	Indexing
   -	Array operations
-    o	Sortrows (*NEW)
-Distance & Norm functions (*NEW)
-  -	Distance between points (*NEW)
-  -	Find neighbors with rangesearch() (*NEW)
-  -	Vector norms (*NEW)
-Symbolic
+    o	**Sortrows (*NEW)**
+## **Distance & Norm functions (NEW)**
+  -	**Distance between points (NEW)**
+  -	**Find neighbors with rangesearch() (NEW)**
+  -	**Vector norms (NEW)**
+## Symbolic
   -	Declaring symbolic variables
   -	Declaring symbolic functions
   -	Evaluating symbolic functions
   -	Differentiation & integration
   -	Conversion between string and symbolic
-  -	Conversion between numeric and symbolic (*NEW)
-  -	Applying symbolic functions (*NEW)
-    o	cellfun() (*NEW)
-    o	arrayfun() (*NEW)
-    o	bsxfun() (*NEW)
-Plotting
+  -	**Conversion between numeric and symbolic (NEW)**
+  -	**Applying symbolic functions (NEW)**
+    o	**cellfun() (NEW)**
+    o	**arrayfun() (NEW)**
+    o	**bsxfun() (NEW)**
+## Plotting
   -	Basic plotting
   -	Annotations
   -	Animated plotting
-  -	Meshgrid & graph functions (*NEW)
-MATLAB App Designer (*NEW)
-  -	How to create a Graphical User Interface (GUI) (*NEW)
+  -	**Meshgrid & graph functions (NEW)**
+## **MATLAB App Designer (NEW)**
+  -	**How to create a Graphical User Interface (NEW)**
