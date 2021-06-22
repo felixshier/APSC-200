@@ -3,7 +3,6 @@
 - Primer PDF file includes MATLAB functions including explanations and examples.
 - Primer .mlx files include interactive tutorials that will ask the students to perform tasks using the functions from the primer PDF. Each section of the primer PDF should go along with a single primer .mlx file.
 - Idea is for students to complete the primer .mlx files while following along with the primer PDF.
-- Could also include a miscellaneous section at the end for useful techniques relevant to project (e.g. calculating adjacency matrix, leveraging symbolic function representations, etc,) 
 # Primer Contents
 ## Section 1: Basic Concepts
   -	**Live Editor & Command Window & Workspace & Search documentation (*NEW*)**
