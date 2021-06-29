@@ -5,8 +5,9 @@
 - Idea is for students to complete the primer .mlx files while following along with the primer PDF.
 - An associated .mlx file take-home assignment (~2% of final grade in course) which covers concepts presented in the Primer and introduces small problems relevant to the project (i.e. use matrix operations to calculate distance between agents) can be written so that students have to submit a completed version by the end of Week 1   
 # Primer Contents
-## Section 1: Basic Concepts
-  -	**Live Editor & Command Window & Workspace & Search documentation (*NEW*)**
+## **Section 1: Introduction to MATLAB (*NEW*)**
+  -	**Live Editor & Command Window & Workspace & Current Folder & Search documentation (*NEW*)**
+## Section 2: Basic Concepts
   -	**Variables (*NEW*)**
   -	**Built in functions & constants (*NEW*)**
   -	Relational operators
