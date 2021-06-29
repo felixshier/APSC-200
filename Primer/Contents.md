@@ -18,7 +18,7 @@
   -	If / elseif / else statements
   -	Loop structures
   -	Timing
-## Section 2: Vectors & Matrices
+## Section 3: Vectors & Matrices
   -	Row & column vectors
   -	**Evenly spaced vectors (*NEW*)**
   -	Matrices
@@ -26,11 +26,11 @@
   -	Indexing
   -	Array operations
     -	 **Sortrows (*NEW*)**
-## **Section 3: Distance & Norm functions (*NEW*)**
+## **Section 4: Distance & Norm functions (*NEW*)**
   -	**Distance between points (*NEW*)**
   -	**Find neighbors with rangesearch() (*NEW*)**
   -	**Vector norms (*NEW*)**
-## Section 4: Symbolic
+## Section 5: Symbolic Math
   -	Declaring symbolic variables
   -	Declaring symbolic functions
   -	Evaluating symbolic functions
@@ -41,10 +41,10 @@
     -	**cellfun() (*NEW*)**	
     -	**arrayfun() (*NEW*)**
     -	**bsxfun() (*NEW*)**
-## Section 5: Plotting
+## Section 6: Plotting
   -	Basic plotting
   -	Annotations
   -	Animated plotting
   -	**Meshgrid & graph functions (*NEW*)**
-## **Section 6: MATLAB App Designer (*NEW*)**
+## **Section 7: MATLAB App Designer (*NEW*)**
   -	**How to create a Graphical User Interface (*NEW*)**
