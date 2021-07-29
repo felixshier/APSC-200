@@ -12,8 +12,8 @@ function A = calcA(agentPosition)
 %     The n-by-n adjacency matrix
 
 %previous code randomly assigns communications at each time step
-A = diag(ones(size(agentPosition,1),1));
-A(randi(numel(A),5,1)) = 1;
+% A = diag(ones(size(agentPosition,1),1));
+% A(randi(numel(A),5,1)) = 1;
 
 %my stuff
 %A = squareform(pdist(agentPosition));
