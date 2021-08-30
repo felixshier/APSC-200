@@ -1,0 +1,241 @@
+\documentclass[../MATLAB_Primer.tex]{subfiles}
+\begin{document}
+Throughout your APSC 200 project you will find yourself looking to measure distances between sets of points. Perhaps you will want to find the distances between agents in order to determine if they are within range for communication, or perhaps you will want to find the distances between multiple agents and a point in space in order to determine which agent is closest to the point. Additionally, different scenarios may require different distance measurements. Perhaps you will want to calculate the Euclidean distance between two flight enabled agents hovering in space, or perhaps you will want to calculate the cityblock distance of two grounded agents travelling through city streets.
+
+\subsection{Pairwise Distance}
+
+\begin{table}[H]
+\caption{Pairwise Distance Functions}
+    \begin{center}
+        \begin{tabular}{| C{3cm} | m{12cm}|}
+            \hline
+            \textbf{MATLAB Syntax} & \textbf{Description}\\
+            
+            \hline
+            \href{https://www.mathworks.com/help/stats/pdist.html}{\color{blue}pdist(X)} & Computes the pairwise distance between observation pairs in array $X$\\
+            \hline
+            \href{https://www.mathworks.com/help/stats/pdist2.html}{\color{blue}pdist2(X,Y)} & Returns the pairwise distances between observations in sets $X$ and $Y$\\
+            \hline
+        \end{tabular}
+        \label{tab:pairwise_distance}
+    \end{center}
+\end{table}
+
+\subsubsection{pdist}
+\texttt{pdist} is used to calculate the pairwise distance between pairs of observations. \texttt{pdist} takes as input an $n\times m$ array where $n$ represents the number of observations ($n>=2$) and $m$ represents the dimension of the observations. Additionally, \texttt{pdist} may take as input a string distance metric to indicate the distance metric which is to be used (Euclidean, cityblock, etc.). The default distance metric is Euclidean. All distance metrics can be found within MATLAB's documentation.\\
+
+Example 1:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% consider the matrix X which has two observations: (1,1) and (2,2)
+X = [1, 1; 
+     2, 2]; 
+     
+% determine the euclidean distance between observations in X
+D = pdist(X) 
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    D = 1.4142
+\end{center}
+
+Example 2:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% consider the matrix X which has three observations
+% each row is the position of an agent in 3-D
+X = [1, 7, 2; 
+     3, 9, 8; 
+     5, 5, 6]; 
+     
+% determine the cityblock distances between observations in X
+D = pdist(X, 'cityblock') 
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    D = [10, 10, 8]
+\end{center}
+
+In this case, the pairwise distances returned correspond to the agent combinations (1,2), (1,3), and (2,3).  Alternatively, you can easily locate the distance between observations by using the \texttt{squareform} function. The \texttt{squareform} function returns an $n\times n$ array where cell $(i,j)$ represents the distance between observations $i$ and $j$.  One should note that cell $(i,j)$ equals cell $(j,i)$. 
+\\ \\
+Example:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% alternate format of distance array
+Z = squareform(D)
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    Z = 
+    $\begin{bmatrix}
+    0 & 10 & 10\\ 
+    10 & 0 & 8\\
+    10 & 8 & 0
+    \end{bmatrix}$
+\end{center}
+
+\subsubsection{pdist2}
+\texttt{pdist2} is used to calculate the pairwise distance between two sets of observations. \texttt{pdist2} takes as input an $n\times k$ array, $X$, and an $m\times k$ array, $Y$, where $n$ and $m$ represent the number of observations in the two sets of observations, respectively, and $k$ represents the dimension of the two sets of observations. Additionally, \texttt{pdist2} may take as input a string distance metric to indicate the distance metric which is to be used (Euclidean, cityblock, etc.). The default distance metric is Euclidean. All distance metrics can be found within MATLAB's documentation. \texttt{pdist2} returns an $n\times m$ array where the cell (i,j) corresponds to the pairwise distance between observation $i$ in $X$ and observation $j$ in $Y$.\\
+
+Example 1:\\
+
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% consider two sets of observations X & Y (sets of agent positions in 3-D)
+X = [1,2,3;
+     1,3,5;
+     1,4,7];
+     
+Y = [1,5,3;
+      2,9,2;
+      2,3,1];
+
+% determine the euclidean distances between observations in X and  Y
+D = pdist2(X,Y) 
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    D = 
+    $\begin{bmatrix}
+    3 & 7.1414 & 2.4495\\ 
+    2.8284 & 6.7823 & 4.1231\\
+    4.1231 & 7.1414 & 6.1644
+    \end{bmatrix}$
+\end{center}
+
+\subsection{rangesearch}
+\texttt{rangesearch}  is used to determine neighbors between two sets of observations with a specified range. \texttt{rangesearch} takes as input an $n\times k$ array, $X$, and an $m\times k$ array, $Y$, where $n$ and $m$ represent the number of observations in the two sets of observations, respectively, and $k$ represents the dimension of the two sets of observations. Additionally, \texttt{rangesearch} takes as input a numeric value, $r\in \mathbb{R}_+$, that represents the specified range to determine neighboring points. \texttt{rangesearch} returns an $m\times 1$ cell array, $Idx$, where $j\in Idx(i)\Leftrightarrow d_j\leq r$ where $d_j = ||X(j)-Y(i)||$. Additionally, \texttt{rangesearch} can optionally return an $m\times 1$ cell array, $D$ where $d_j\in D(i) \Leftrightarrow d_j\leq r$ where $d_j = ||X(j)-Y(i)||$.\\
+
+\begin{table}[H]
+\caption{Nearest-Neighbour Function}
+    \begin{center}
+        \begin{tabular}{| C{3cm} | m{12cm}|}
+            \hline
+            \textbf{MATLAB Syntax} & \textbf{Description}\\
+            
+            \hline
+            \href{https://www.mathworks.com/help/stats/rangesearch.html}{\color{blue}rangesearch(X,Y,r)} & Find all neighbors in $X$ within specified distance $r$ using input data $Y$. \\
+            \hline
+            
+        \end{tabular}
+        \label{tab:rangesearch}
+    \end{center}
+\end{table}
+
+Example 1:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% consider two sets of observations X & Y
+X = [1,2,3;
+     1,3,5;
+     1,4,7];
+     
+Y = [1,5,3;
+      2,9,2;
+      2,3,1];
+      
+% determine neighbors within a range of 5
+[Idx,D] = rangesearch(X,Y,5)
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    Idx = 
+    $\begin{bmatrix}
+    [2,1,3]\\
+    []\\
+    [1,2]
+    \end{bmatrix}$
+    D = 
+    $\begin{bmatrix}
+    [2.8284,3,4.1231]\\
+    []\\
+    [2.4495,4.1231]
+    \end{bmatrix}$
+\end{center}
+
+This shows that all observations in $X$ are neighbors with observation 1 in $Y$, no observations in $X$ are neighbors with observation 2 in $Y$, and observations 1 and 2 in $X$ are neighbors with observation 3 in $Y$. Corresponding distances are shown in $D$.
+
+\subsection{vecnorm}
+\texttt{vecnorm} is used to determine the vector-wise norm  of an array. \texttt{vecnorm} takes as input an array, $A$. Additionally, \texttt{vecnorm} may take as optional inputs two positive integers, $p$ and $d$, which represent the norm type and the dimension to operate along. $p$ holds a default value of 2 and $d$ holds a default value of 1 \texttt{vecnorm} returns the $p$-norm of $A$.\\
+
+\begin{table}[H]
+\caption{Vector Norm Function}
+    \begin{center}
+        \begin{tabular}{| C{3cm} | m{12cm}|}
+            \hline
+            \textbf{MATLAB Syntax} & \textbf{Description}\\
+            
+            \hline
+            \href{https://www.mathworks.com/help/matlab/ref/vecnorm.html}{\color{blue}vecnorm(A,p,d)} & Computes the p-norm across a vector over a specified axis (e.g. rows or columns)\\
+            \hline
+            
+        \end{tabular}
+        \label{tab:vector_norm}
+    \end{center}
+\end{table}
+
+Example 1:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% consider the matrix A
+A = [1,2; 
+     2,2;
+     4,1];
+    
+% return the vector-wise norms of A 
+N = vecnorm(A) 
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    N = 
+    $\begin{bmatrix}
+    4.5826\\
+    3.0000
+    \end{bmatrix}$
+\end{center}
+
+Notice how there are only two values in N? This is because by default, \texttt{vecnorm} returns the vector-wise norms of the columns of A. To obtain the vector-wise norms of the rows of A, you must specify that you wish to operate in dimension 2.
+\\ \\
+Example 2:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+% consider A to be 3 (x,y) pairs
+A = [1,2; 
+     2,2;
+     4,1];
+     
+% return the vector-wise norms of the rows of A
+% the first 2 specifies the p-norm, the second 2 specifies the dimension
+N = vecnorm(A,2,2) 
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    N = 
+    $\begin{bmatrix}
+    2.2361\\
+    2.8284\\
+    4.1231
+    \end{bmatrix}$
+\end{center}
+
+\end{document}

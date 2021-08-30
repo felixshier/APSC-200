@@ -1,0 +1,138 @@
+\documentclass[../MATLAB_Primer.tex]{subfiles}
+
+\begin{document}
+\subsection{Every Function}
+\begin{longtable}{| C{2cm} | C{2.8cm} | p{11cm}|}
+%\caption{Summary of all functions in primer with links to official documentation}
+            \hline
+            \textbf{Topic} & \textbf{MATLAB Syntax} & \textbf{Description}\\
+            \hline
+            
+            \multirow{21}{*}{\hyperref[Arrays and Matrices]{\color{blue}Arrays}}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/linspace.html}{\color{blue}linspace(x1,x2,n)} & Returns an array of $n$ evenly spaced points between $x1$ and $x2$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/zeros.html}{\color{blue}zeros(sz)} & Returns a matrix of size $sz$ with zeros in every location\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/ones.html}{\color{blue}ones(sz)} & Returns a matrix of size $sz$ with ones in every location\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/eye.html}{\color{blue}eye(n)} & Returns the $n\times n$ identity matrix\\
+            \cline{2-3}
+            
+            &  \href{https://www.mathworks.com/help/matlab/ref/diag.html}{\color{blue}diag(v)} & Returns a diagonal matrix from a vector $v$ or returns the diagonal entries of a matrix as a vector\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/size.html}{\color{blue}size(arr)} & Returns a row vector containing the dimensions of an array, $arr$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/sum.html}{\color{blue}sum(arr)} & Returns the sum of array elements along a specified axis.  For matrices the default function call returns a row vector with the sum over columns. \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/max.html}{\color{blue}max(arr)} & Returns the max values in array $arr$ or matrix along a specific axis (i.e. row or column)\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/min.html}{\color{blue}min(arr)} & Returns the min values in array $arr$ or matrix along a specific axis (i.e. row or column). \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/sort.html}{\color{blue}sort(arr)} & Returns a sorted structure given an array, $arr$, in ascending order by default.  This direction can be modified by changing function parameters.\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/arrayfun.html}{\color{blue}arrayfun(f, arr)} & Applies function, $f$, to each element in the array $arr$.  $f$ must be a \href{https://www.mathworks.com/help/matlab/matlab_prog/creating-a-function-handle.html}{\color{blue}function handle}\\
+            \cline{2-3}
+                
+            & \href{https://www.mathworks.com/help/matlab/ref/horzcat.html}{\color{blue}horzcat(A,B)} & Concatenates matrices $A$ and $B$ along the horizontal axis\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/vertcat.html}{\color{blue}vertcat(A,B)} & Concatenates matrices $A$ and $B$ along the vertical axis\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/reshape.html}{\color{blue}reshape(A, sz)} & Reshapes array $A$ into an array of size $sz$\\
+            \hline
+            
+            
+            \multirow{9}{*}{\hyperref[Arrays and Matrices]{\color{blue}Lin Alg}}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/det.html}{\color{blue}det(A)} & Returns the determinant of a square matrix $A$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/eig.html}{\color{blue}eig(A)} & Returns a column vector containing the eigenvalues of a square matrix $A$\\
+            \cline{2-3}
+                
+            & \href{https://www.mathworks.com/help/matlab/ref/inv.html}{\color{blue}inv(A)} & Returns the inverse of a square matrix $A$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/transpose.html}{\color{blue}transpose(A)} or A' & Returns the transpose of a matrix $A$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/cross.html}{\color{blue}cross(u,v)} & Returns the cross products given two arrays $u$ and $v$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/dot.html}{\color{blue}dot(u,v)} & Returns the dot product given two arrays $u$ and $v$\\
+            \hline
+            
+            
+            \multirow{7}{*}{\hyperref[Distance and Norm Functions]{\color{blue}Distance}}
+            
+            & \href{https://www.mathworks.com/help/stats/pdist.html}{\color{blue}pdist(X)} & Returns the pairwise distance between observation pairs in array $X$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/stats/pdist2.html}{\color{blue}pdist2(X,Y)} & Returns the pairwise distance between observations in sets $X$ and $Y$\\
+            \cline{2-3}
+            
+            & \href{Find all neighbors within specified distance using input data}{\color{blue}rangesearch(X,Y,r)} & Find all neighbors in $X$ within specified distance $r$ using input data $Y$. \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/vecnorm.html}{\color{blue}vecnorm(A,p,d)} & Computes the p-norm of a vector over a specified axis (e.g. rows or columns)\\
+            \hline
+            
+            
+            \multirow{11}{*}{\hyperref[Symbolic]{\color{blue}Symbolic}}
+            
+            & \href{https://www.mathworks.com/help/symbolic/sym.html}{\color{blue}sym} & Creates symbolic variables and numbers\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/symbolic/syms.html}{\color{blue}syms} & Shortcut for \texttt{sym}\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/symbolic/double.html}{\color{blue}double(s)} & Converts symbolic variable $s$ to a numeric type with \texttt{double} precision\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/symbolic/symfun.html}{\color{blue}symfun} & Creates symbolic functions\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/symbolic/diff.html}{\color{blue}diff(f,$\sigma$)} & Returns the derivative of a symbolic function, $f$, w.r.t. parameter $\sigma$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/symbolic/sym.int.html}{\color{blue}int(f, $\sigma$)} & Returns the definite or indefinite integral of a symbolic function, $f$, w.r.t. parameter $\sigma$  \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/symbolic/subs.html}{\color{blue}subs(f, old, new)} & Substitutes parameter $old$ with parameter $new$ in a symbolic expression $f$  \\
+            \hline
+            
+            
+            
+            \multirow{8}{*}{\hyperref[Plotting]{\color{blue}Plotting}}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/plot.html}{\color{blue}plot(X, Y)} & Generates a 2-D line plot for vector $Y$ versus $X$, where $X$ and $Y$ are of equal length.  \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/subplot.html}{\color{blue}subplot(m,n,p)} & Divides the current figure into $m$ $\times$ $n$ subplots and plots in position $p$ \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/subplot.html}{\color{blue}tiledlayout(m,n)} & Creates a tiled layout grid of size $m$ $\times$ $n$ for easy subplots\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/meshgrid.html}{\color{blue}meshgrid(X, Y)} & Generates a 2-D grid from vectors $X$ and $Y$\\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/surf.html}{\color{blue}surf(X, Y, Z)} & Produces the surface $Z$ over meshgrid $(X,Y)$ \\
+            \cline{2-3}
+            
+            & \href{https://www.mathworks.com/help/matlab/ref/plot3.html}{\color{blue}plot3(X, Y, Z)} & Produces a scatter plot of points in matrix $Z$ over meshgrid $(X,Y)$ \\
+            \hline
+\end{longtable}
+
+\end{document}

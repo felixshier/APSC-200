@@ -1,0 +1,108 @@
+\documentclass[../CourseManual.tex]{subfiles}
+
+\begin{document}
+
+With continued technological advances, the use of multi-agents systems to solve complex problems is  becoming increasingly feasible. From self-driving vehicles to search and rescue drones, the ability to have independent communication between agents is critical to the success of these systems. Four group formation algorithms will be presented in this course, which include the formation algorithm, the flocking algorithm, Hegselmann-Krause opinion dynamics, and Lloyd's algorithm. For your project, you will select an area of application that requires the agents to communicate with each other and/or converge in a decentralized manner using one of the four algorithms.
+
+\subsection{Project Overview}
+For the APSC 200 P2 project, you will be applying the engineering design process and mathematical concepts towards a topic of your choice involving group formation dynamics. As in APSC 100 and APSC 200 P1, \textbf{your primary task is to develop and showcase engineering design process skills.} This includes, but is not limited to, the development of a problem definition, background research, design criteria, proposed design alternatives, empirical data analysis, and justified decision making. \\
+
+There is no physical prototyping in this course, nor are there labs to gather empirical data. Instead, you will be using the engineering design process to develop a model of your system using the mathematics provided. You will then test your system in a simulation environment to validate your design choices for the system. The `shell' of the simulation environment (GUI, graphical plots, data output) are provided for you. \textbf{Your secondary task is to develop the simulation by implementing your algorithm in MATLAB.} \\
+
+The simulation environment you develop will provide you with empirical data that can be used in decision making based on the design criteria you create. That means your design is only as accurate as your data, which is only as accurate as your simulation. At points during the project you may find that you need to make an assumption for your design. Any assumptions that you make must be well explained and justified. \\
+
+\fbox{\parbox{\textwidth}{You will begin developing the simulation in Week 3 of this project. It is important to verify that any code you write runs without errors. To do this, use the MATLAB Command Window and/or write a script to test your function(s) with dummy parameters. Then, verify the output of your function is what you would expect.}}\\
+
+The mathematics in this course are well within the scope of APSC 171, 172, and 174. There are some elements of MTHE 237 and 280 depending on the algorithm you choose. This course will not teach you any new mathematical concepts, but will instead have you apply your existing mathematical knowledge. There are no submissions or marks for your technical work, besides anything included in your reports. As such, \textit{don't let the coding become the main focus of your project!}
+
+\subsection{MATLAB Primer}
+Supplementary files in the form of a PDF and MATLAB Live Scripts (.mlx files) have been provided to assist you in the review and development of your MATLAB skills. The primer PDF contains a review of general programming concepts, syntax, MATLAB-specific concepts, and an overview of useful functions and features.  In each section of the primer there are actual examples included to better illustrate the discussed concepts. Topics covered include arrays and matrices, calculating distances, the symbolic toolbox, plotting, and the MATLAB App Designer. These topics are supplemented through the use of MATLAB Live Scripts which allow you to interactively test your knowledge of the various concepts addressed in the primer PDF. For an optimal learning experience, it is recommended that you work through the Live Scripts while using the primer PDF as a reference such that you can familiarize yourself with the MATLAB environment and relevant concepts.\\
+
+The table below provides a summary of the material(s) covered in each section of the primer. \\
+\begin{table}[H]
+    \centering
+    \caption{MATLAB Primer sections and the content covered in each section}
+    \begin{tabular}{|m{4.5cm}|p{3cm}|m{8cm}|}
+        \hline
+         \textbf{Primer Section} & \textbf{File Name} & \textbf{Topics Covered}\\
+         \hline
+         
+         Introduction to MATLAB & N/A & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item Command Window
+             \item Workspace
+             \item Editor (or Live Editor)
+             \item Current Folder 
+             \item Search Documentation
+         \end{itemize}\\
+         \hline 
+         
+         Basic Concepts & basicConcepts.mlx &
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item Variables
+             \item Built-in Functions and Constants 
+             \item Relational and Logical Operators 
+             \item If Statements
+             \item Loops 
+             \item Timing
+         \end{itemize}\\
+         \hline
+         
+         Functions & functions.mlx & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item Function Definition 
+             \item Anonymous Functions 
+         \end{itemize}\\
+         \hline
+         
+         Arrays \& Matrices & arrays.mlx & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item Array Declaration
+             \item Array Indexing 
+             \item Array Operations 
+             \item Size and Dimension Manipulation 
+             \item Array Logic
+             \item Cell Arrays
+         \end{itemize}\\
+         \hline
+         
+         Distance \& Norm Functions & distances.mlx & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item Pairwise Distance 
+             \item rangesearch function
+             \item vecnorm function
+         \end{itemize}\\
+         \hline
+         
+         Symbolic Math & sym.mlx & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item Symbolic Variables
+             \item Symbolic Functions
+         \end{itemize}\\
+         \hline
+         
+         Plotting & plotting.mlx & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item 2-D Line Plots
+             \item Plotting in 3-D
+         \end{itemize}\\
+         \hline
+         
+         App Designer & appDesigner.mlx & 
+         \begin{itemize}[leftmargin=*]
+         \setlength\itemsep{0.02em}
+             \item App Designer Basics
+         \end{itemize}\\
+         \hline
+    \end{tabular}
+    \label{tab:MATLAB Primer}
+\end{table}
+
+\end{document}

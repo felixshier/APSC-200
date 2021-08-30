@@ -1,0 +1,119 @@
+\documentclass[../MATLAB_Primer.tex]{subfiles}
+\begin{document}
+To organize your project and limit the amount of code you are required to write, you can create functions to perform specific actions which you may wish to use multiple times throughout your project. 
+
+\subsection{Function Definition}
+
+Functions can be defined in one of two ways: in a script or in a function file. When creating a script that contains commands and function definitions, functions must be at the end of the file. Additionally, the script file cannot have the same name as a function in the file. When creating a function file, the file must only contain function definitions. Additionally, the name of the file must match the name of the first function in the file. Furthermore, valid function names begin with an alphabetic character, and can contain letters, numbers, or underscores.
+
+\subsubsection{Syntax}
+
+Proper function definitions follow the format below which declares a function named myfun that accepts inputs x1,...,xM and returns outputs y1,...,yN.
+\\
+\begin{lstlisting}[frame=single]
+function [y1,...,yN] = myfun(x1,...,xM) 
+% calculation
+end
+\end{lstlisting}
+
+Example 1:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+z = add(9,10);
+fprintf('z: %d', z);
+
+function z = add(x,y) 
+z = x + y;
+end
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    z: 19
+\end{center}
+
+Example 2:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+[y,z] = addSubtract(9,10);
+fprintf('y: %d, z: %d', y, z);
+
+function [y,z] = addSubtract(w,x) 
+y = w + x;
+z = w - x;
+end
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    y: 19, z: -1
+\end{center}
+
+\subsection{Function Handles}
+
+A function handle is a MATLAB data type that stores an association to a function. Function handles are useful if you wish to pass functions as variables to other functions (ex: integration).
+\\ \\
+Example 1:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+f = @myfunction;
+f_5 = f(5);
+fprintf('f_5: %.2f', f_5);
+
+function y = myfunction(x) 
+y = (x^2)/10 - 10;
+end
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    f\_5: -7.50
+\end{center}
+
+Example 2:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+f = @myfunction;
+f_int_0_1 = integral(f,0,1);
+fprintf('f_int_0_1: %.1f', f_int_0_1);
+
+function y = myfunction(x) 
+y = (x^2)/10 - 10;
+end
+\end{lstlisting}
+
+\textit{output:}
+
+\begin{center}
+    f\_int\_0\_1: -9.97
+\end{center}
+
+\subsubsection{Anonymous Functions}
+
+Additionally, anonymous functions can be created to simply define a function handle that can accept multiple inputs and return one output in a single executable statement. Proper anonymous function definition follows the format below which declares an anonymous function handle named myfun that accepts inputs x1,...,xM and returns a their sum.
+\\
+\begin{lstlisting}[frame=single]
+myfun = @(x1,...,xM) x1 + ... + xM
+\end{lstlisting}
+
+Example 1:
+\\ \\
+\textit{input:}
+\begin{lstlisting}[frame=single]
+sqr = @(n) n.^2;
+x = sqr(3)
+\end{lstlisting}
+
+\textit{output:}
+\begin{center}
+    x = 9
+\end{center}
+
+\end{document}
